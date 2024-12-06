@@ -25,15 +25,14 @@ Future<void> main() async {
   );
 }
 
-
-// Step 1
-
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'FlyGPT',
       theme: FlexThemeData.light(
@@ -41,32 +40,7 @@ class MyApp extends StatelessWidget {
         colors: FlexSchemeColor.from(primary: Colors.blueAccent),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        body: SignInPage(),
-      ),
+      routerConfig: appRouter.config(),
     );
   }
 }
-
-
-// // Step 2
-//
-// class MyApp extends StatelessWidget {
-//   MyApp({super.key});
-//
-//   final appRouter = AppRouter();
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp.router(
-//       debugShowCheckedModeBanner: false,
-//       title: 'FlyGPT',
-//       theme: FlexThemeData.light(
-//         textTheme: GoogleFonts.interTextTheme(),
-//         colors: FlexSchemeColor.from(primary: Colors.blueAccent),
-//         useMaterial3: true,
-//       ),
-//       routerConfig:appRouter.config(),
-//     );
-//   }
-// }

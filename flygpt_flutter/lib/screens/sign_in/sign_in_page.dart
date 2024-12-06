@@ -9,6 +9,6 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MediaQuery.sizeOf(context);
-    return MobileSignInPage();
+    return Material(child: MobileSignInPage());
   }
 }
