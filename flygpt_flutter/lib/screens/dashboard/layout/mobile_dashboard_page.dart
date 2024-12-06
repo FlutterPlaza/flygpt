@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flygpt_flutter/main.dart';
+import 'package:flygpt_flutter/routes/app_router.gr.dart';
 import 'package:flygpt_flutter/screens/shared_widgets/mobile_bottom_navbar.dart';
 import 'package:flygpt_flutter/shared/constants.dart';
 import 'package:flygpt_flutter/shared/platform_layouts/mobile_layout.dart';
@@ -35,7 +36,7 @@ class MobileDashboardPage extends StatelessWidget {
         IconButton(
           icon: const Icon(PhosphorIconsBold.signOut),
           onPressed: () {
-            sessionManager.signOutDevice();
+            podClient.sessionManager.signOutDevice();
           },
         ),
       ],
@@ -59,7 +60,7 @@ class MobileDashboardPage extends StatelessWidget {
           : FloatingActionButton(
               backgroundColor: Constants.colors(context).of.accentColor,
               onPressed: () {
-                // context.router.push(ChatRoute());
+                context.router.push(ChatRoute());
               },
               child: const Icon(
                 PhosphorIconsBold.plusCircle,

@@ -65,7 +65,7 @@ class MobileSignInPage extends StatelessWidget {
                         : Display.cardMaxWidth,
                     height: 50,
                     child: SignInWithEmailButton(
-                      caller: client.modules.auth,
+                      caller: podClient.client.modules.auth,
                       onSignedIn: () {
                         context.router.replace(DashboardRoute());
                       },
