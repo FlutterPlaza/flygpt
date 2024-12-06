@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flygpt_flutter/main.dart';
 import 'package:flygpt_flutter/routes/app_router.gr.dart';
 import 'package:flygpt_flutter/screens/sign_in/widgets/animated_logo.dart';
+import 'package:flygpt_flutter/screens/sign_in/widgets/login_options.dart';
 import 'package:flygpt_flutter/shared/adaptive_display.dart';
 import 'package:gap/gap.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -48,7 +49,7 @@ class MobileSignInPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  // LoginOptions(),
+                  LoginOptions(),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),
                     child: Divider(
@@ -71,9 +72,6 @@ class MobileSignInPage extends StatelessWidget {
                       icon: Icon(Icons.email_outlined),
                       label: Text('Sign In or Sign up'),
                       style: ElevatedButton.styleFrom(
-                        // primary: Colors.white,
-                        // onPrimary: Colors.black,
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
