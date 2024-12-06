@@ -331,8 +331,12 @@ Got it! Here's the updated **Step 4** with the screenshot description added:
      ```
 
 5. Verify that:
-   - Navigation between screens works seamlessly.
    - Authentication checks, such as login and signup, function correctly.
+   - Ensure that logic page looks like 
+
+![Screenshot 2024-12-06 at 9 47 25 AM](https://github.com/user-attachments/assets/236eaecf-4588-40b8-9b17-c5b5cb2b6e96)
+
+
 
 > **Tip:** Ensure any server-side authentication logic in **Serverpod** is correctly configured to validate user sessions.
 
