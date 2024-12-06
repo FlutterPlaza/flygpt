@@ -11,6 +11,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 import '../endpoints/example_endpoint.dart' as _i2;
+import '../endpoints/history_endpoint.dart' as _i3;
+import 'package:flygpt_server/src/generated/history.dart' as _i4;
+import 'package:serverpod_auth_server/serverpod_auth_server.dart' as _i5;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
@@ -21,7 +24,13 @@ class Endpoints extends _i1.EndpointDispatch {
           server,
           'example',
           null,
-        )
+        ),
+      'history': _i3.HistoryEndpoint()
+        ..initialize(
+          server,
+          'history',
+          null,
+        ),
     };
     connectors['example'] = _i1.EndpointConnector(
       name: 'example',
@@ -47,5 +56,76 @@ class Endpoints extends _i1.EndpointDispatch {
         )
       },
     );
+    connectors['history'] = _i1.EndpointConnector(
+      name: 'history',
+      endpoint: endpoints['history']!,
+      methodConnectors: {
+        'createHistory': _i1.MethodConnector(
+          name: 'createHistory',
+          params: {
+            'history': _i1.ParameterDescription(
+              name: 'history',
+              type: _i1.getType<_i4.History>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['history'] as _i3.HistoryEndpoint).createHistory(
+            session,
+            params['history'],
+          ),
+        ),
+        'updateHistory': _i1.MethodConnector(
+          name: 'updateHistory',
+          params: {
+            'history': _i1.ParameterDescription(
+              name: 'history',
+              type: _i1.getType<_i4.History>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['history'] as _i3.HistoryEndpoint).updateHistory(
+            session,
+            params['history'],
+          ),
+        ),
+        'getAllHistory': _i1.MethodConnector(
+          name: 'getAllHistory',
+          params: {},
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['history'] as _i3.HistoryEndpoint)
+                  .getAllHistory(session),
+        ),
+        'deleteHistory': _i1.MethodConnector(
+          name: 'deleteHistory',
+          params: {
+            'history': _i1.ParameterDescription(
+              name: 'history',
+              type: _i1.getType<_i4.History>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['history'] as _i3.HistoryEndpoint).deleteHistory(
+            session,
+            params['history'],
+          ),
+        ),
+      },
+    );
+    modules['serverpod_auth'] = _i5.Endpoints()..initializeEndpoints(server);
   }
 }
