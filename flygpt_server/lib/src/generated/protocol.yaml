@@ -1,2 +1,7 @@
 example:
   - hello:
+history:
+  - createHistory:
+  - updateHistory:
+  - getAllHistory:
+  - deleteHistory:
