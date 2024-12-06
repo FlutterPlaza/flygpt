@@ -1,0 +1,56 @@
+version: '3.7'
+
+services:
+  # Development services
+  postgres:
+    image: postgres:16.3
+    ports:
+      - '8090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: flygpt
+      POSTGRES_PASSWORD: "X55VQMRLdN-nF6i_JLvv6G-c1JUWbOex"
+    volumes:
+      - flygpt_data:/var/lib/postgresql/data
+#    profiles:
+#      - '' # Default profile
+#      - dev
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '8091:6379'
+    command: redis-server --requirepass "nN4HmsUa5O9ENtkWG4FXpY5BwsU2KHTJ"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+#    profiles:
+#      - '' # Default profile
+#      - dev
+
+  # Test services
+  postgres_test:
+    image: postgres:16.3
+    ports:
+      - '9090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: flygpt_test
+      POSTGRES_PASSWORD: "JCXZEeYG0VvBznaUFJJpb3DOZf8cH_WU"
+    volumes:
+      - flygpt_test_data:/var/lib/postgresql/data
+#    profiles:
+#      - '' # Default profile
+#      - test
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - '9091:6379'
+    command: redis-server --requirepass "hNK2_yheQZEdyz2XdIxNpFMw-iaePeq2"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+#    profiles:
+#      - '' # Default profile
+#      - test
+
+volumes:
+  flygpt_data:
+  flygpt_test_data:
