@@ -26,17 +26,20 @@ class AppRouter extends RootStackRouter {
           initial: true,
           guards: [authGuard],
         ),
+        AutoRoute(
+          page: ChatRoute.page,
+          path: '/chat',
+          guards: [authGuard],
+        ),
       ];
 }
 
 class AuthGuard extends AutoRouteGuard {
-
-
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
     // the navigation is paused until resolver.next() is called with either
     // true to resume/continue navigation or false to abort navigation
-    if (sessionManager.isSignedIn) {
+    if (podClient.sessionManager.isSignedIn) {
       // if user is authenticated we continue
       resolver.next(true);
     } else {

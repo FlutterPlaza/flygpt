@@ -28,7 +28,7 @@ class MobileAppBar extends StatelessWidget {
           IconButton(
             icon: const Icon(PhosphorIconsBold.signOut),
             onPressed: () {
-              sessionManager.signOutDevice();
+              podClient.sessionManager.signOutDevice();
               context.router.navigate(const SignInRoute());
             },
           ),
