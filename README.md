@@ -3,7 +3,7 @@
 **Description:**  
 FlyGPT is a **ChatGPT-inspired app** crafted with **Flutter** and **Serverpod**, designed for a seamless **multi-platform experience**. This project emphasizes the use of **code generation** with tools like **build_runner** and custom **build_generator** to streamline development and optimize performance across mobile, web, and desktop platforms.  
 
-This is what it would look like at the end (for version 01). Check the video
+This is what it would look like at the end (for version 01). Check image to play the video
 
 [![Video Thumbnail](https://github.com/user-attachments/assets/3f1c8517-7a2e-45a2-8a56-83aa815bb990)](https://drive.google.com/file/d/15NOhZYwFODabwChTVdPrnzpjR-XcAsmt/view?usp=sharing)
 
