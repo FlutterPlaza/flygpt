@@ -53,7 +53,7 @@ Before you begin, ensure the following are installed on your system:
 3. Execute the following command to pull the `starter` branch of the FlyGPT repository:
 
    ```bash
-   git clone starter https://github.com/FlutterPlaza/flygpt.git
+   git clone https://github.com/FlutterPlaza/flygpt.git
    ```
 
 4. Navigate into the project directory:
